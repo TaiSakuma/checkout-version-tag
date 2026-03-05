@@ -14,7 +14,20 @@ Extracted from [`TaiSakuma/legendary-octo-happiness`](https://github.com/TaiSaku
 
 ## Testing
 
-This action has no build step. To test changes, create a workflow in a test repo that uses the action with a local path or branch ref.
+CI runs two workflow files on push to `main` and on pull requests:
+
+- **Unit tests** (`.github/workflows/unit-test.yml`) — test the derive logic with `skip-checkout: true`.
+- **Integration tests** (`.github/workflows/integration-test.yml`) — exercise the full action including checkout against real tags.
+
+Run locally with [act](https://github.com/nektos/act):
+
+```bash
+act push --container-architecture linux/amd64
+```
+
+## PR Convention
+
+Squash-merge with [Conventional Commits](https://www.conventionalcommits.org/) PR titles (e.g., `feat: ...`, `fix: ...`). See `CONTRIBUTING.md` for details.
 
 ## Releases
 
