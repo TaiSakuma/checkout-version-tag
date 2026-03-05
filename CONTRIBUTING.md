@@ -51,18 +51,15 @@ act push --container-architecture linux/amd64
 
 ## Releasing
 
-1. Tag the release and push:
+This project uses a two-tag release flow automated by CI:
+
+1. Tag with the `u` prefix and push:
 
    ```bash
-   git tag v1.x.x
-   git push origin v1.x.x
+   git tag u1.x.x
+   git push origin u1.x.x
    ```
 
-2. Create a GitHub Release from the tag and check **"Publish this Action to the GitHub Marketplace"** in the release form.
+2. The **Generate changelog** workflow runs automatically, updating `CHANGELOG.md` and creating the `v1.x.x` tag.
 
-3. Update the floating major-version tag so users who pin to `v1` get the latest:
-
-   ```bash
-   git tag -f v1 v1.x.x
-   git push -f origin v1
-   ```
+3. The **Release** workflow then runs automatically, creating a GitHub Release with auto-generated notes and updating the floating major-version tag (e.g., `v1` for `v1.x.x`, `v2` for `v2.x.x`).

@@ -31,10 +31,11 @@ Squash-merge with [Conventional Commits](https://www.conventionalcommits.org/) P
 
 ## Releases
 
-1. Tag with `v1.x.x` (e.g., `v1.0.0`).
-2. Create a GitHub Release from the tag.
-3. Check **"Publish this Action to the GitHub Marketplace"** in the release form.
-4. Maintain a floating `v1` tag pointing to the latest `v1.x.x` for users who pin to the major version.
+Two-tag flow automated by CI:
+
+1. Push a `u<version>` tag (e.g., `git tag u1.0.0 && git push origin u1.0.0`).
+2. The **Generate changelog** workflow (`changelog.yml`) updates `CHANGELOG.md` and creates the `v<version>` tag.
+3. The **Release** workflow (`release.yml`) creates a GitHub Release with auto-generated notes and moves the floating major-version tag (e.g., `v1`, `v2`).
 
 ## Marketplace
 
