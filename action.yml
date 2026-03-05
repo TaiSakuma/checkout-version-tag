@@ -38,6 +38,10 @@ runs:
       id: derive
       shell: bash
       run: |
+        if [[ "$TRIGGER_TAG" != "$PREFIX"* ]]; then
+          echo "::error::trigger-tag '${TRIGGER_TAG}' does not start with trigger-tag-prefix '${PREFIX}'"
+          exit 1
+        fi
         VERSION="${TRIGGER_TAG#"$PREFIX"}"
         echo "release-tag=${RELEASE_PREFIX}${VERSION}" >> "$GITHUB_OUTPUT"
         echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
