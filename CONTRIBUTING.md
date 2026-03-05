@@ -63,3 +63,5 @@ This project uses a two-tag release flow automated by CI:
 2. The **Generate changelog** workflow runs automatically, updating `CHANGELOG.md` and creating the `v1.x.x` tag.
 
 3. The **Release** workflow then runs automatically, creating a GitHub Release with auto-generated notes and updating the floating major-version tag (e.g., `v1` for `v1.x.x`, `v2` for `v2.x.x`).
+
+> **Note:** The initial Marketplace publication must be done manually via the GitHub web UI by creating a release and checking **"Publish this Action to the GitHub Marketplace"**. Subsequent releases are listed automatically.

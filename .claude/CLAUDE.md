@@ -41,3 +41,4 @@ Two-tag flow automated by CI:
 
 - Branding: icon `tag`, color `blue`.
 - The `name` and `description` fields in `action.yml` appear on the Marketplace listing.
+- The initial Marketplace publication must be done manually via the GitHub web UI. Subsequent releases are listed automatically.
