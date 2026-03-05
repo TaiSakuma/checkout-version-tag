@@ -1,5 +1,7 @@
 # checkout-version-tag
 
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Checkout%20Version%20Tag-blue?logo=github)](https://github.com/marketplace/actions/checkout-version-tag)
+
 A GitHub Action that derives a release tag from a trigger tag and checks out the corresponding ref.
 
 This is useful in release workflows where a "trigger" tag (e.g., `u1.2.3`) is pushed to kick off the release process, and the workflow needs to check out the matching release tag (e.g., `v1.2.3`).
